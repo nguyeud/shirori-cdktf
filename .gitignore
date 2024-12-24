@@ -1,11 +1,18 @@
+.vscode
+
+!jest.config.js
+!setup.js
+
 *.d.ts
 *.js
+build
+dist
 node_modules
+tsconfig.tsbuildinfo
+
+# CDK asset staging directory
 cdktf.out
 cdktf.log
 *terraform.*.tfstate*
 .gen
 .terraform
-tsconfig.tsbuildinfo
-!jest.config.js
-!setup.js
