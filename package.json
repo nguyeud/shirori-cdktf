@@ -1,20 +1,25 @@
 {
   "name": "cdktf-lib",
   "version": "1.0.0",
-  "main": "main.js",
-  "types": "main.ts",
-  "license": "MPL-2.0",
+  "main": "dist/lib/main.js",
+  "types": "dist/types/lib/main.d.ts",
+  "license": "MIT",
   "private": true,
   "scripts": {
+    "upgrade": "npm i cdktf@latest cdktf-cli@latest",
+    "upgrade:next": "npm i cdktf@next cdktf-cli@next",
     "get": "cdktf get",
-    "build": "tsc",
     "synth": "cdktf synth",
-    "compile": "tsc --pretty",
+    "clean": "gts clean",
+    "lint": "gts lint",
+    "fix": "gts fix",
+    "build": "tsc",
     "watch": "tsc -w",
     "test": "jest",
     "test:watch": "jest --watch",
-    "upgrade": "npm i cdktf@latest cdktf-cli@latest",
-    "upgrade:next": "npm i cdktf@next cdktf-cli@next"
+    "prepare": "npm run build",
+    "pretest": "npm run prepare",
+    "posttest": "npm run lint"
   },
   "engines": {
     "node": ">=18.0"
@@ -24,11 +29,19 @@
     "constructs": "^10.4.2"
   },
   "devDependencies": {
+    "@eslint/js": "^9.17.0",
     "@types/jest": "^29.5.14",
-    "@types/node": "^22.10.2",
+    "@types/node": "^22.7.5",
+    "eslint": "^8.57.1",
+    "eslint-config-prettier": "^9.1.0",
+    "eslint-import-resolver-typescript": "^3.7.0",
+    "eslint-plugin-import": "^2.31.0",
+    "eslint-plugin-prettier": "^5.2.1",
+    "gts": "^6.0.2",
     "jest": "^29.7.0",
     "ts-jest": "^29.2.5",
     "ts-node": "^10.9.2",
-    "typescript": "^5.7.2"
+    "typescript": "^5.7.2",
+    "typescript-eslint": "^8.18.2"
   }
 }
