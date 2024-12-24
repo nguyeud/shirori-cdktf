@@ -34,11 +34,13 @@
     ],
   },
   "include": [
-    "lib/**/*.ts"
+    "lib/**/*.ts",
+    "test/**/*.ts",
+    "setup.ts",
+    "jest.config.js",
   ],
   "exclude": [
     "dist/**/*",
-    "test/**/*.ts",
     "node_modules",
     "cdktf.out"
   ]
