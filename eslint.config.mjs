@@ -50,7 +50,7 @@ export default tseslint.config(
     // config with just ignores is the replacement for `.eslintignore`
     ignores: [
       '**/.prettierrc.js',
-      '**/jest.config.js',
+      '**/jest.config.mjs',
 
       '**/build/**',
       '**/dist/**',
